@@ -1,9 +1,16 @@
 .grass {
-    background-color: #2DCD45;
+    /* background-color: #2DCD45; */
+    background: linear-gradient(#09951e, rgba(141, 240, 156, 0.9));
+}
+.grass:hover {
+    opacity: 0.93;
 }
 
 .poison {
     background-color: #883688;
+}
+.poison:hover {
+    opacity: 0.93;
 }
 
 .fire {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -7,13 +8,39 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='pokemonTypes.css'>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src='script.js'></script>
+    <link rel="icon" href="./img/favicon.jpg">
 </head>
+
 <body onload="loadPokemon()">
-    <div>
-        
-    </div>
-    
-    
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <div class="leftSide">
+                    <img src="./img/pokeball.jpg">
+                    <h1><b>Pokédex</b></h1>
+                </div>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="pokemon" class="pokemon">
+            <div class="flexing">
+                <h2 id="pokemonName">Name</h2>
+                <div>
+                    <h3 id="type1"></h3>
+                    <h3 id="type2"></h3>
+                </div>
+            </div>
+            <img id="pokemonImage">
+        </div>
+    </main>
+    <footer></footer>
 </body>
+
 </html>

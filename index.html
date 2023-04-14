@@ -4,11 +4,13 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Poké API</title>
+    <title>PokéDex</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='pokemonTypes.css'>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'></script>
     <script src='script.js'></script>
     <link rel="icon" href="./img/favicon.jpg">
 </head>
@@ -19,28 +21,52 @@
             <div class="container-fluid">
                 <div class="leftSide">
                     <img src="./img/pokeball.jpg">
-                    <h1><b>Pokédex</b></h1>
+                    <h1><b>PokéDex</b></h1>
                 </div>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <div class="rightSide">
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Select type
+                        </a>
+                      
+                        <ul class="dropdown-menu">
+                          <li><a onclick="selectedType('all')" class="dropdown-item" href="#">All</a></li>
+                          <li><a onclick="selectedType('grass')" class="dropdown-item grass" href="#">Grass</a></li>
+                          <li><a onclick="selectedType('poison')" class="dropdown-item poison" href="#">Poison</a></li>
+                          <li><a onclick="selectedType('fire')" class="dropdown-item fire" href="#">Fire</a></li>
+                          <li><a onclick="selectedType('water')" class="dropdown-item water" href="#">Water</a></li>
+                          <li><a onclick="selectedType('flying')" class="dropdown-item flying" href="#">Flying</a></li>
+                          <li><a onclick="selectedType('bug')" class="dropdown-item bug" href="#">Bug</a></li>
+                          <li><a onclick="selectedType('normal')" class="dropdown-item normal" href="#">Normal</a></li>
+                          <li><a onclick="selectedType('electric')" class="dropdown-item electric" href="#">Electric</a></li>
+                          <li><a onclick="selectedType('ground')" class="dropdown-item ground" href="#">Ground</a></li>
+                          <li><a onclick="selectedType('fairy')" class="dropdown-item fairy" href="#">Fairy</a></li>
+                          <li><a onclick="selectedType('fighting')" class="dropdown-item fighting" href="#">Fighting</a></li>
+                          <li><a onclick="selectedType('psychic')" class="dropdown-item psychic" href="#">Psychic</a></li>
+                          <li><a onclick="selectedType('rock')" class="dropdown-item rock" href="#">Rock</a></li>
+                          <li><a onclick="selectedType('ice')" class="dropdown-item ice" href="#">Ice</a></li>
+                          <li><a onclick="selectedType('ghost')" class="dropdown-item ghost" href="#">Ghost</a></li>
+                          <li><a onclick="selectedType('dragon')" class="dropdown-item dragon" href="#">Dragon</a></li>
+                        </ul>
+                      </div>
+                      
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search from loadeds" aria-label="Search"
+                            onkeyup="input()" id="search">
+                    </form>
+                </div>
             </div>
         </nav>
     </header>
     <main>
-        <div id="pokemon" class="pokemon">
-            <div class="flexing">
-                <h2 id="pokemonName">Name</h2>
-                <div>
-                    <h3 id="type1"></h3>
-                    <h3 id="type2"></h3>
-                </div>
-            </div>
-            <img id="pokemonImage">
+        <div class="pokedex" id="pokedex">
+
         </div>
     </main>
-    <footer></footer>
+    <footer id="hide">
+        <button class="btn btn-primary nextButton" type="submit" onclick="loadNext()" id="nextButton">Load next 25
+            Pokemon!</button>
+    </footer>
 </body>
 
 </html>

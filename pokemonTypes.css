@@ -1,198 +1,274 @@
 /* grass */
-.grass {
+.Grass {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Grass:hover {
+    opacity: 1;
     background: linear-gradient(#1d8f2ee6, #55df6ae6);
+    border: 1px solid white;
 }
 
-.grassType {
-    background-color: #1d8f2ee6;
-}
-
-.grass:hover {
-    background: #1d8f2ee6;
+.GrassClicked {
+    opacity: 1;
+    background: linear-gradient(#1d8f2ee6, #55df6ae6);
+    border: 1px solid white;
 }
 
 /* poison */
-.poison {
+.Poison {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Poison:hover {
+    opacity: 1;
     background: linear-gradient(#d762d7, #7b1c7b);
+    border: 1px solid white;
 }
 
-.poisonType {
-    background: #d762d7;
-}
-
-.poison:hover {
-    background: #d762d7;
+.PoisonClicked {
+    opacity: 1;
+    background: linear-gradient(#d762d7, #7b1c7b);
+    border: 1px solid white;
 }
 
 /* fire */
-.fire {
+.Fire {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Fire:hover {
+    opacity: 1;
     background: linear-gradient(#f2761e, #dba27a);
+    border: 1px solid white;
 }
 
-.fireType {
-    background: #f2761e;
-}
-
-.fire:hover {
-    background: #f2761e;
+.FireClicked {
+    opacity: 1;
+    background: linear-gradient(#f2761e, #dba27a);
+    border: 1px solid white;
 }
 
 /* water */
-.water {
+.Water {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Water:hover {
+    opacity: 1;
     background: linear-gradient(#286ec3, #6fa1dd);
+    border: 1px solid white;
 }
 
-.waterType {
-    background: #286ec3;
-}
-
-.water:hover {
-    background: #286ec3;
+.WaterClicked {
+    opacity: 1;
+    background: linear-gradient(#286ec3, #6fa1dd);
+    border: 1px solid white;
 }
 
 /* bug */
-.bug {
+.Bug {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Bug:hover {
+    opacity: 1;
     background: linear-gradient(#36840c, #5db52e);
+    border: 1px solid white;
 }
 
-.bugType {
-    background: #5db52e;
-}
-
-.bug:hover {
-    background: #5db52e;
+.BugClicked {
+    opacity: 1;
+    background: linear-gradient(#36840c, #5db52e);
+    border: 1px solid white;
 }
 
 /* normal */
-.normal {
+.Normal {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Normal:hover {
+    opacity: 1;
     background: linear-gradient(#A8A878, #e9e9b1);
+    border: 1px solid white;
 }
 
-.normalType {
-    background: #A8A878;
-}
-
-.normal:hover {
-    background: #A8A878;
+.NormalClicked {
+    opacity: 1;
+    background: linear-gradient(#A8A878, #e9e9b1);
+    border: 1px solid white;
 }
 
 /* electric */
-.electric {
+.Electric {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Electric:hover {
+    opacity: 1;
     background: linear-gradient(#ffeb9d, #F8D030);
+    border: 1px solid white;
 }
 
-.electricType {
-    background: #F8D030;
-}
-
-.electric:hover {
-    background: #F8D030;
+.ElectricClicked {
+    opacity: 1;
+    background: linear-gradient(#ffeb9d, #F8D030);
+    border: 1px solid white;
 }
 
 /* ground */
-.ground {
+.Ground {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Ground:hover {
+    opacity: 1;
     background: linear-gradient(#E0C068, #f4e3b7);
+    border: 1px solid white;
 }
 
-.groundType {
-    background: #E0C068 !important;
-}
-
-.ground:hover {
-    background: #E0C068;
+.GroundClicked {
+    opacity: 1;
+    background: linear-gradient(#E0C068, #f4e3b7);
+    border: 1px solid white;
 }
 
 /* fairy */
-.fairy {
+.Fairy {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Fairy:hover {
+    opacity: 1;
     background: linear-gradient(#EE99AC, #ffffff);
+    border: 1px solid white;
 }
 
-.fairyType {
-    background: #EE99AC;
-}
-
-.fairy:hover {
-    background: #EE99AC;
+.FairyClicked {
+    opacity: 1;
+    background: linear-gradient(#EE99AC, #ffffff);
+    border: 1px solid white;
 }
 
 /* fighting */
-.fighting {
+.Fighting {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Fighting:hover {
+    opacity: 1;
     background: linear-gradient(#94352D, #cd857f);
+    border: 1px solid white;
 }
 
-.fightingType {
-    background: #94352D;
-}
-
-.fighting:hover {
-    background: #94352D;
+.FightingClicked {
+    opacity: 1;
+    background: linear-gradient(#94352D, #cd857f);
+    border: 1px solid white;
 }
 
 /* psychic */
-.psychic {
+.Psychic {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Psychic:hover {
+    opacity: 1;
     background: linear-gradient(#FF6996, #f6c1d2);
+    border: 1px solid white;
 }
 
-.psychicType {
-    background: #FF6996;
-}
-
-.psychic:hover {
-    background: #FF6996;
+.PsychicClicked {
+    opacity: 1;
+    background: linear-gradient(#FF6996, #f6c1d2);
+    border: 1px solid white;
 }
 
 /* rock */
-.rock {
+.Rock {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Rock:hover {
+    opacity: 1;
     background: linear-gradient(#B8A038, #ffec95);
+    border: 1px solid white;
 }
 
-.rockType {
-    background: #B8A038;
-}
-
-.rock:hover {
-    background: #B8A038;
+.RockClicked {
+    opacity: 1;
+    background: linear-gradient(#B8A038, #ffec95);
+    border: 1px solid white;
 }
 
 /* ice */
-.ice {
+.Ice {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Ice:hover {
+    opacity: 1;
     background: linear-gradient(#98D8D8, #f7fbfb);
+    border: 1px solid white;
 }
 
-.iceType {
-    background: #98D8D8;
-}
-
-.ice:hover {
-    background: #98D8D8;
+.IceClicked {
+    opacity: 1;
+    background: linear-gradient(#98D8D8, #f7fbfb);
+    border: 1px solid white;
 }
 
 /* ghost */
-.ghost {
+.Ghost {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Ghost:hover {
+    opacity: 1;
     background: linear-gradient(#ad8be3, #614C83);
+    border: 1px solid white;
 }
 
-.ghostType {
-    background: #614C83;
-}
-
-.ghost:hover {
-    background: #614C83;
+.GhostClicked {
+    opacity: 1;
+    background: linear-gradient(#ad8be3, #614C83);
+    border: 1px solid white;
 }
 
 /* dragon */
-.dragon {
+.Dragon {
+    background: grey;
+    opacity: 0.7;
+}
+
+.Dragon:hover {
+    opacity: 1;
     background: linear-gradient(#700AEE, #c293fa);
+    border: 1px solid white;
 }
 
-.dragonType {
-    background: #c293fa;
+.DragonClicked {
+    opacity: 1;
+    background: linear-gradient(#700AEE, #c293fa);
+    border: 1px solid white;
 }
 
-.dragon:hover {
-    background: #c293fa;
-}
-
-.flying {
+.Flying {
     background: linear-gradient(#24a78f, #88f5e1);
+    opacity: 0.7;
 }

@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
 h1 {
     color: #F94746;
     margin: 0 !important;
@@ -5,7 +9,7 @@ h1 {
 
 .start {
     position: fixed;
-    z-index: 3;
+    z-index: 4;
     background-color: #000000;
     height: 100vh;
     width: 100%;
@@ -18,31 +22,15 @@ h1 {
     transition: all 1s ease-in-out;
 }
 
-.starthide {
-    /* display: none; */
+.start .starthide button {
     position: fixed;
-    z-index: 0 !important;
-    background-color: #000000;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 20px;
-    transition: all 1s ease-in-out;
-
-    opacity: 0;
-}
-
-.start button {
-    width: 200px;
+    z-index: 4;
 }
 
 .startGif {
     height: 45vh;
-    width: 40%;
-    object-fit: cover;
+    width: 100%;
+    object-fit: contain;
 }
 
 .backgroundImg {
@@ -54,7 +42,7 @@ h1 {
 }
 
 main {
-    z-index: 1 !important;
+    z-index: 2 !important;
     position: relative;
 }
 
@@ -86,11 +74,9 @@ nav {
     cursor: pointer;
 }
 
-/* HELP !!!!!!!!!!!!!!!!! */
 .pokemon:hover img {
     transform: translate(20px, 20px);
-    /* transform: translate(20px, 20px); */
-    transition: transform 200ms ease-in-out;
+    transition: 200ms ease-in-out;
 }
 
 .imageContainer {
@@ -103,12 +89,11 @@ nav {
 .pokemonImage {
     max-width: 200px;
     max-height: 140px;
-    transition: transform 200ms ease-in-out;
+    transition: 200ms ease-in-out;
 }
 
 h4 {
     padding: 5px 10px 5px 10px;
-    /* text-decoration: underline; */
 }
 
 .flexing {
@@ -129,7 +114,7 @@ h4 {
 footer {
     height: 200px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,15 +127,39 @@ footer {
     font-size: 20px !important;
 }
 
-.stats {
+.statsBackground {
     position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     backdrop-filter: blur(5px);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 10;
+    z-index: 3;
+}
+
+.statsHidden {
+    opacity: 0 !important;
+    left: 50% !important;
+    right: 50% !important;
+    top: 50% !important;
+    bottom: 50% !important;
+    z-index: 0 !important;
+}
+
+.stats {
+    opacity: 1;
+    left: 25%;
+    right: 25%;
+    top: 0;
+    bottom: 0;
+    z-index: 4;
+    position: fixed;
+    border-radius: 15px;
+    background-color: beige;
+    transition: all 0.5s ease-in-out;
+}
+
+.dropdown-menu {
+    height: 300px;
+    overflow-y: scroll;
 }

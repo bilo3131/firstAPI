@@ -11,16 +11,22 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'></script>
-    <script src='script.js'></script>
+    <script src='main.js'></script>
+    <script src='stats.js'></script>
     <link rel="icon" href="./img/png/logo.png">
 </head>
 
 <body id="body" onload="loadPokemon()" style="overflow: hidden;">
-    <div id="stats" class="d-none stats" onclick="showAll()">
+    <div id="stats" class="stats statsHidden">
+
     </div>
-    <div id="start" class = "start">
+
+    <div id="statsBackground" class="d-none statsBackground" onclick="showAll()">
+
+    </div>
+    <div id="start" class="start">
         <img class="startGif" src="img/gif/pikachu.gif">
-        <button class="btn btn-primary" type="submit" onclick="join()" id="nextButton">Join
+        <button class="btn btn-primary goButton" type="submit" onclick="join()" id="nextButton">Join
             Pokédex!</button>
     </div>
     <img class="backgroundImg" src="img/background.jpeg">
@@ -47,13 +53,11 @@
                             <li><a onclick="selectedType('bug')" class="dropdown-item" href="#">Bug</a></li>
                             <li><a onclick="selectedType('normal')" class="dropdown-item" href="#">Normal</a>
                             </li>
-                            <li><a onclick="selectedType('electric')" class="dropdown-item"
-                                    href="#">Electric</a></li>
+                            <li><a onclick="selectedType('electric')" class="dropdown-item" href="#">Electric</a></li>
                             <li><a onclick="selectedType('ground')" class="dropdown-item" href="#">Ground</a>
                             </li>
                             <li><a onclick="selectedType('fairy')" class="dropdown-item" href="#">Fairy</a></li>
-                            <li><a onclick="selectedType('fighting')" class="dropdown-item"
-                                    href="#">Fighting</a></li>
+                            <li><a onclick="selectedType('fighting')" class="dropdown-item" href="#">Fighting</a></li>
                             <li><a onclick="selectedType('psychic')" class="dropdown-item" href="#">Psychic</a>
                             </li>
                             <li><a onclick="selectedType('rock')" class="dropdown-item" href="#">Rock</a></li>
@@ -76,7 +80,6 @@
         <div class="pokedex" id="pokedex">
         </div>
         <div class="showInformations d-none">
-            helloooo
         </div>
     </main>
     <footer id="hide">

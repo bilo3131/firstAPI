@@ -2,273 +2,345 @@
 .Grass {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Grass:hover {
     opacity: 1;
-    background: linear-gradient(#1d8f2ee6, #55df6ae6);
-    border: 1px solid white;
+    background: linear-gradient(#1d8f2e, #55df6a);
 }
 
 .GrassClicked {
+    background: linear-gradient(#1d8f2e, #55df6a);
+}
+
+.pokemon:hover .Grass {
     opacity: 1;
-    background: linear-gradient(#1d8f2ee6, #55df6ae6);
-    border: 1px solid white;
+    background: #189618;
 }
 
 /* poison */
 .Poison {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Poison:hover {
     opacity: 1;
     background: linear-gradient(#d762d7, #7b1c7b);
-    border: 1px solid white;
 }
 
 .PoisonClicked {
-    opacity: 1;
     background: linear-gradient(#d762d7, #7b1c7b);
-    border: 1px solid white;
+}
+
+.pokemon:hover .Poison {
+    opacity: 1;
+    background: rgb(213, 90, 213);
 }
 
 /* fire */
 .Fire {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Fire:hover {
     opacity: 1;
     background: linear-gradient(#f2761e, #dba27a);
-    border: 1px solid white;
 }
 
 .FireClicked {
-    opacity: 1;
     background: linear-gradient(#f2761e, #dba27a);
-    border: 1px solid white;
+}
+
+.pokemon:hover .Fire {
+    opacity: 1;
+    background: #e9602f;
 }
 
 /* water */
 .Water {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Water:hover {
     opacity: 1;
     background: linear-gradient(#286ec3, #6fa1dd);
-    border: 1px solid white;
 }
 
 .WaterClicked {
-    opacity: 1;
     background: linear-gradient(#286ec3, #6fa1dd);
-    border: 1px solid white;
+}
+
+.pokemon:hover .Water {
+    opacity: 1;
+    background: #2a71ae;
 }
 
 /* bug */
 .Bug {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Bug:hover {
     opacity: 1;
-    background: linear-gradient(#36840c, #5db52e);
-    border: 1px solid white;
+    background: linear-gradient(#2c690c, #4d9a23);
 }
 
 .BugClicked {
+    background: linear-gradient(#2c690c, #4d9a23);
+}
+
+.pokemon:hover .Bug {
     opacity: 1;
-    background: linear-gradient(#36840c, #5db52e);
-    border: 1px solid white;
+    background: #0a640a;
 }
 
 /* normal */
 .Normal {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Normal:hover {
     opacity: 1;
     background: linear-gradient(#A8A878, #e9e9b1);
-    border: 1px solid white;
 }
 
 .NormalClicked {
-    opacity: 1;
     background: linear-gradient(#A8A878, #e9e9b1);
-    border: 1px solid white;
+}
+
+.pokemon:hover .Normal {
+    opacity: 1;
+    background: #a0a074;
 }
 
 /* electric */
 .Electric {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Electric:hover {
     opacity: 1;
     background: linear-gradient(#ffeb9d, #F8D030);
-    border: 1px solid white;
 }
 
 .ElectricClicked {
-    opacity: 1;
     background: linear-gradient(#ffeb9d, #F8D030);
-    border: 1px solid white;
+}
+
+.pokemon:hover .Electric {
+    opacity: 1;
+    background: #fdfd26;
 }
 
 /* ground */
 .Ground {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Ground:hover {
     opacity: 1;
     background: linear-gradient(#E0C068, #f4e3b7);
-    border: 1px solid white;
 }
 
 .GroundClicked {
-    opacity: 1;
     background: linear-gradient(#E0C068, #f4e3b7);
-    border: 1px solid white;
+}
+
+.pokemon:hover .Ground {
+    opacity: 1;
+    background: #d5b68d;
 }
 
 /* fairy */
 .Fairy {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Fairy:hover {
     opacity: 1;
     background: linear-gradient(#EE99AC, #ffffff);
-    border: 1px solid white;
 }
 
 .FairyClicked {
-    opacity: 1;
     background: linear-gradient(#EE99AC, #ffffff);
-    border: 1px solid white;
+}
+
+.pokemon:hover .Fairy {
+    opacity: 1;
+    background: #d3949e;
 }
 
 /* fighting */
 .Fighting {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Fighting:hover {
     opacity: 1;
     background: linear-gradient(#94352D, #cd857f);
-    border: 1px solid white;
 }
 
 .FightingClicked {
-    opacity: 1;
     background: linear-gradient(#94352D, #cd857f);
-    border: 1px solid white;
+}
+
+.pokemon:hover .Fighting {
+    opacity: 1;
+    background: #8b3636;
 }
 
 /* psychic */
 .Psychic {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Psychic:hover {
     opacity: 1;
     background: linear-gradient(#FF6996, #f6c1d2);
-    border: 1px solid white;
 }
 
 .PsychicClicked {
-    opacity: 1;
     background: linear-gradient(#FF6996, #f6c1d2);
-    border: 1px solid white;
+}
+
+.pokemon:hover .Psychic {
+    opacity: 1;
+    background: #eb647a;
 }
 
 /* rock */
 .Rock {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Rock:hover {
     opacity: 1;
     background: linear-gradient(#B8A038, #ffec95);
-    border: 1px solid white;
 }
 
 .RockClicked {
-    opacity: 1;
     background: linear-gradient(#B8A038, #ffec95);
-    border: 1px solid white;
+}
+
+.pokemon:hover .Rock {
+    opacity: 1;
+    background: #B8A038;
 }
 
 /* ice */
 .Ice {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Ice:hover {
     opacity: 1;
     background: linear-gradient(#98D8D8, #f7fbfb);
-    border: 1px solid white;
 }
 
 .IceClicked {
+    background: linear-gradient(#98D8D8, #f7fbfb);
+}
+
+.pokemon:hover .Ice {
     opacity: 1;
     background: linear-gradient(#98D8D8, #f7fbfb);
-    border: 1px solid white;
 }
 
 /* ghost */
 .Ghost {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Ghost:hover {
     opacity: 1;
     background: linear-gradient(#ad8be3, #614C83);
-    border: 1px solid white;
 }
 
 .GhostClicked {
+    background: linear-gradient(#ad8be3, #614C83);
+}
+
+.pokemon:hover .Ghost {
     opacity: 1;
     background: linear-gradient(#ad8be3, #614C83);
-    border: 1px solid white;
 }
 
 /* dragon */
 .Dragon {
     background: grey;
     opacity: 0.7;
+    border-radius: 15px;
 }
 
 .Dragon:hover {
     opacity: 1;
     background: linear-gradient(#700AEE, #c293fa);
-    border: 1px solid white;
 }
 
 .DragonClicked {
-    opacity: 1;
     background: linear-gradient(#700AEE, #c293fa);
-    border: 1px solid white;
 }
 
+.pokemon:hover .Dragon {
+    opacity: 1;
+    background: linear-gradient(#700AEE, #c293fa);
+}
+
+/* flying */
 .Flying {
-    background: linear-gradient(#24a78f, #88f5e1);
+    background: grey;
     opacity: 0.7;
+    border-radius: 15px;
+}
+
+.FlyingClicked {
+    background: linear-gradient(#62c2d7, #116662);
+}
+
+.pokemon:hover .Flying {
+    opacity: 1;
+    background: linear-gradient(#62c2d7, #116662);
+}
+
+/* steel */
+.Steel {
+    background: grey;
+    opacity: 0.7;
+    border-radius: 15px;
+}
+
+.SteelClicked {
+    background: linear-gradient(#c1c1c1, #787878);
+}
+
+.pokemon:hover .Steel {
+    opacity: 1;
+    background: linear-gradient(#c1c1c1, #787878);
 }

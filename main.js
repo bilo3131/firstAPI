@@ -31,7 +31,7 @@ let AUDIO_PIKA = new Audio('audio/pikaSound.mp3');
 
 function join() {
     AUDIO_PIKA.volume = .08;
-    // AUDIO_PIKA.play();
+    AUDIO_PIKA.play();
     document.getElementById('start').style.opacity = '0';
     document.getElementById('start').style.zIndex = '0';
     document.getElementById('body').style.overflow = '';
@@ -67,16 +67,20 @@ function pokeInfo(currentPokemon) {
     }
     let img = currentPokemon['sprites']['other']['official-artwork']['front_default'];
     renderPokemon(name, typeOne, typeTwo, img, id);
-    if (document.getElementById(`id${id}`) == ''){
-        document.getElementById(`id${id}`).style.display = 'none';
-    }
 }
 
 function renderPokemon(name, typeOne, typeTwo, img, id) {
     let pokedex = document.getElementById('pokedex');
     pokedex.innerHTML += pokedexHTML(name, typeOne, typeTwo, img, id);
+    typeIsVoid(typeTwo, id);
     let pokemon = document.getElementById(name);
     pokemon.classList.add(typeOne);
+}
+
+function typeIsVoid(typeTwo, id) {
+    if (typeTwo == '') {
+        document.getElementById(id).classList.add('d-none');
+    }
 }
 
 function pokedexHTML(name, typeOne, typeTwo, img, id) {
@@ -86,7 +90,7 @@ function pokedexHTML(name, typeOne, typeTwo, img, id) {
                 <h2>${name}</h2>
                 <div>
                     <h4 class="${typeOne}">${typeOne}</h4>
-                    <h4 id="id${id}" class="${typeTwo}">${typeTwo}</h4>
+                    <h4 id="${id}" class="${typeOne}">${typeTwo}</h4>
                 </div>
             </div>
             <div class="imageContainer">
@@ -136,47 +140,4 @@ function selectedType(type) {
             pokeInfo(pokemon);
         }
     }
-}
-
-function showStats(id) {
-    document.getElementById('stats').classList.remove('statsHidden');
-    document.getElementById('statsBackground').classList.remove('d-none');
-    document.getElementById('body').style.overflow = 'hidden';
-    let currentPokemon = allPokemon[id-1];
-    // console.log(currentPokemon);
-    currentStats(currentPokemon);
-}
-
-function currentStats(currentPokemon) {
-    let baseExperience = currentPokemon['base_experience'];
-    let id = currentPokemon['id'];
-    // renderMoves(currentPokemon);
-    let name = currentPokemon['name'].charAt(0).toUpperCase() + currentPokemon['name'].slice(1);
-    let image = currentPokemon['sprites']['other']['dream_world']['front_default'];
-    let height = currentPokemon['height'] / 10;
-    let weight = currentPokemon['weight'] / 10;
-    let typeOne = currentPokemon['types']['0']['type']['name'].charAt(0).toUpperCase() + currentPokemon['types']['0']['type']['name'].slice(1);
-    let typeTwo;
-    let types = currentPokemon['types'];
-    if (types.length > 1) {
-        typeTwo = currentPokemon['types']['1']['type']['name'].charAt(0).toUpperCase() + currentPokemon['types']['1']['type']['name'].slice(1);
-    } else {
-        typeTwo = '';
-    }
-    console.log(typeTwo);
-    // generateStats(currentPokemon);
-}
-
-// function generateStats(currentPokemon) {
-//     let stats = currentPokemon['stats'];
-//     for (let i = 0; i < stats.length; i++) {
-//         let statName = stats[i]['stat']['name'];
-//         let statValue = stats[i]['base_stat'];
-//     }
-// }
-
-function showAll() {
-    document.getElementById('statsBackground').classList.add('d-none');
-    document.getElementById('body').style.overflow = '';
-    document.getElementById('stats').classList.add('statsHidden');
 }

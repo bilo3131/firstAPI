@@ -17,12 +17,16 @@
 </head>
 
 <body id="body" onload="loadPokemon()" style="overflow: hidden;">
-    <div id="stats" class="stats statsHidden">
+    <div id="statsContainer">
+        <div id="stats" class="stats statsHidden">
+            <div class="statsBottom">
+                <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+            </div>
+        </div>
 
-    </div>
+        <div id="statsBackground" class="d-none statsBackground" onclick="showAll()">
 
-    <div id="statsBackground" class="d-none statsBackground" onclick="showAll()">
-
+        </div>
     </div>
     <div id="start" class="start">
         <img class="startGif" src="img/gif/pikachu.gif">
@@ -41,29 +45,32 @@
                             Select type
                         </a>
 
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu selectTypeMenu">
                             <li><a onclick="selectedType('all')" class="dropdown-item" href="#">All</a></li>
-                            <li><a onclick="selectedType('grass')" class="dropdown-item" href="#">Grass</a></li>
-                            <li><a onclick="selectedType('poison')" class="dropdown-item" href="#">Poison</a>
+                            <li><a onclick="selectedType('grass')" class="dropdown-item Grass" href="#">Grass</a></li>
+                            <li><a onclick="selectedType('poison')" class="dropdown-item Poison" href="#">Poison</a>
                             </li>
-                            <li><a onclick="selectedType('fire')" class="dropdown-item" href="#">Fire</a></li>
-                            <li><a onclick="selectedType('water')" class="dropdown-item" href="#">Water</a></li>
-                            <li><a onclick="selectedType('flying')" class="dropdown-item" href="#">Flying</a>
+                            <li><a onclick="selectedType('fire')" class="dropdown-item Fire" href="#">Fire</a></li>
+                            <li><a onclick="selectedType('water')" class="dropdown-item Water" href="#">Water</a></li>
+                            <li><a onclick="selectedType('flying')" class="dropdown-item Flying" href="#">Flying</a>
                             </li>
-                            <li><a onclick="selectedType('bug')" class="dropdown-item" href="#">Bug</a></li>
-                            <li><a onclick="selectedType('normal')" class="dropdown-item" href="#">Normal</a>
+                            <li><a onclick="selectedType('bug')" class="dropdown-item Bug" href="#">Bug</a></li>
+                            <li><a onclick="selectedType('normal')" class="dropdown-item Normal" href="#">Normal</a>
                             </li>
-                            <li><a onclick="selectedType('electric')" class="dropdown-item" href="#">Electric</a></li>
-                            <li><a onclick="selectedType('ground')" class="dropdown-item" href="#">Ground</a>
+                            <li><a onclick="selectedType('electric')" class="dropdown-item Electric"
+                                    href="#">Electric</a></li>
+                            <li><a onclick="selectedType('ground')" class="dropdown-item Ground" href="#">Ground</a>
                             </li>
-                            <li><a onclick="selectedType('fairy')" class="dropdown-item" href="#">Fairy</a></li>
-                            <li><a onclick="selectedType('fighting')" class="dropdown-item" href="#">Fighting</a></li>
-                            <li><a onclick="selectedType('psychic')" class="dropdown-item" href="#">Psychic</a>
+                            <li><a onclick="selectedType('fairy')" class="dropdown-item Fairy" href="#">Fairy</a></li>
+                            <li><a onclick="selectedType('fighting')" class="dropdown-item Fighting"
+                                    href="#">Fighting</a></li>
+                            <li><a onclick="selectedType('psychic')" class="dropdown-item Psychic" href="#">Psychic</a>
                             </li>
-                            <li><a onclick="selectedType('rock')" class="dropdown-item" href="#">Rock</a></li>
-                            <li><a onclick="selectedType('ice')" class="dropdown-item" href="#">Ice</a></li>
-                            <li><a onclick="selectedType('ghost')" class="dropdown-item" href="#">Ghost</a></li>
-                            <li><a onclick="selectedType('dragon')" class="dropdown-item" href="#">Dragon</a>
+                            <li><a onclick="selectedType('rock')" class="dropdown-item Rock" href="#">Rock</a></li>
+                            <li><a onclick="selectedType('ice')" class="dropdown-item Ice" href="#">Ice</a></li>
+                            <li><a onclick="selectedType('ghost')" class="dropdown-item Ghost" href="#">Ghost</a></li>
+                            <li><a onclick="selectedType('steel')" class="dropdown-item Steel" href="#">Steel</a></li>
+                            <li><a onclick="selectedType('dragon')" class="dropdown-item Dragon" href="#">Dragon</a>
                             </li>
                         </ul>
                     </div>

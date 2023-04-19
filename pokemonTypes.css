@@ -268,7 +268,7 @@
 
 .pokemon:hover .Ice {
     opacity: 1;
-    background: linear-gradient(#98D8D8, #f7fbfb);
+    background: #98D8D8;
 }
 
 /* ghost */
@@ -289,7 +289,7 @@
 
 .pokemon:hover .Ghost {
     opacity: 1;
-    background: linear-gradient(#ad8be3, #614C83);
+    background: #614C83;
 }
 
 /* dragon */
@@ -310,7 +310,7 @@
 
 .pokemon:hover .Dragon {
     opacity: 1;
-    background: linear-gradient(#700AEE, #c293fa);
+    background: #c293fa;
 }
 
 /* flying */
@@ -320,13 +320,18 @@
     border-radius: 15px;
 }
 
+.Flying:hover {
+    opacity: 1;
+    background: linear-gradient(#62c2d7, #116662);
+}
+
 .FlyingClicked {
     background: linear-gradient(#62c2d7, #116662);
 }
 
 .pokemon:hover .Flying {
     opacity: 1;
-    background: linear-gradient(#62c2d7, #116662);
+    background: #62c2d7;
 }
 
 /* steel */
@@ -334,6 +339,11 @@
     background: grey;
     opacity: 0.7;
     border-radius: 15px;
+}
+
+.Steel:hover {
+    opacity: 1;
+    background: linear-gradient(#c1c1c1, #787878);
 }
 
 .SteelClicked {

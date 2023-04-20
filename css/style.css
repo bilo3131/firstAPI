@@ -1,0 +1,253 @@
+::-webkit-scrollbar {
+    width: 15px;
+    background: grey;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #610d95;
+    border-radius: 10px;
+    border: 1px solid #434343;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #570e85;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #821ac2;
+}
+
+h1 {
+    color: #F94746;
+    margin: 0 !important;
+}
+
+.start {
+    position: fixed;
+    z-index: 4;
+    background-color: #000000;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+.start .starthide button {
+    position: fixed;
+    z-index: 4;
+}
+
+.startGif {
+    height: 45vh;
+    width: 100%;
+    object-fit: contain;
+}
+
+.backgroundImg {
+    position: fixed;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+main {
+    z-index: 2 !important;
+    position: relative;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
+    height: 96px;
+}
+
+.rightSide {
+    display: flex;
+    gap: 8px;
+}
+
+nav {
+    border-bottom: 1px solid;
+}
+
+.pokemon {
+    border: 1px solid;
+    border-radius: 15px;
+    height: 200px;
+    width: 350px;
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.pokemon:hover img {
+    transform: translate(20px, 20px);
+    transition: 200ms ease-in-out;
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.pokemonImage {
+    max-width: 200px;
+    max-height: 140px;
+    transition: 200ms ease-in-out;
+}
+
+h4 {
+    padding: 5px 10px 5px 10px;
+}
+
+.flexing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    height: 100%;
+    padding: 4px 0 4px 0;
+}
+
+.pokedex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer {
+    height: 200px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextButton {
+    width: 300px;
+    height: 100px;
+    border-radius: 15px !important;
+    font-size: 20px !important;
+}
+
+.statsBackground {
+    position: fixed;
+    backdrop-filter: blur(5px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+.statsHidden {
+    opacity: 0 !important;
+    left: 50% !important;
+    right: 50% !important;
+    top: 50% !important;
+    bottom: 50% !important;
+    z-index: 0 !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.statsContainer {
+    opacity: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+    left: 25%;
+    right: 25%;
+    top: 20px;
+    bottom: 20px;
+    z-index: 4;
+    position: fixed;
+    border-radius: 15px;
+    background-color: beige;
+    transition: all 0.2s ease-in-out;
+}
+
+.statsBottom {
+    border-radius: 15px;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    height: 55%;
+    background-color: #ffffff;
+    /* padding-left: 100px;
+    padding-right: 100px;     */
+}
+
+.statsTop {
+    border-radius: 15px;
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    /* display: flex; */
+    /* background-color: aliceblue; */
+    /* padding-left: 100px;
+    padding-right: 100px;     */
+}
+
+.dropdown-menu {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.selectTypeMenu::-webkit-scrollbar {
+    display: none;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.nameIdArea {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 5px 20px;
+}
+
+.nameIdArea h4 {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.nameIdArea h2 {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.typeArea {
+    display: flex;
+    gap: 15px;
+    padding: 0 0 0 20px;
+}
+
+.imageToCenter {
+    display: flex;
+    justify-content: center;
+}
+
+.clickedImage {
+    margin-top: -160px;
+    height: 200px;
+    max-width: 340px;
+}
+
+.navArea {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}

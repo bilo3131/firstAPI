@@ -6,41 +6,34 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Pokédex</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='pokemonTypes.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/pokemonTypes.css'>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'></script>
-    <script src='main.js'></script>
-    <script src='stats.js'></script>
+    <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src='./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'></script>
+    <script src='./js/main.js'></script>
+    <script src='./js/stats.js'></script>
     <link rel="icon" href="./img/png/logo.png">
 </head>
 
 <body id="body" onload="loadPokemon()" style="overflow: hidden;">
-    <div id="statsContainer">
-        <div id="stats" class="stats statsHidden">
-            <div class="statsBottom">
-                <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-            </div>
-        </div>
-
-        <div id="statsBackground" class="d-none statsBackground" onclick="showAll()">
-
-        </div>
+    <div id="statsContainer" class="statsContainer statsHidden">
+    </div>
+    <div id="bluryBackground">  
     </div>
     <div id="start" class="start">
-        <img class="startGif" src="img/gif/pikachu.gif">
-        <button class="btn btn-primary goButton" type="submit" onclick="join()" id="nextButton">Join
+        <img class="startGif" src="./img/gif/pikachu.gif">
+        <button class="btn btn-secondary goButton" type="submit" onclick="join()" id="nextButton">Join
             Pokédex!</button>
     </div>
-    <img class="backgroundImg" src="img/background.jpeg">
+    <img class="backgroundImg" src="./img/background.jpeg">
     <header>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <img class="leftSide" src="./img/png/logo.png">
                 <div class="rightSide">
                     <div class="dropdown">
-                        <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Select type
                         </a>
@@ -90,7 +83,7 @@
         </div>
     </main>
     <footer id="hide">
-        <button class="btn btn-primary nextButton" type="submit" onclick="loadNext()" id="nextButton">Load next 25
+        <button class="btn btn-secondary nextButton" type="submit" onclick="loadNext()" id="nextButton">Load next 25
             Pokemon!</button>
     </footer>
 </body>

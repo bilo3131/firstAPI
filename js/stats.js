@@ -1,14 +1,17 @@
 function showStats(id) {
     let currentPokemon = allPokemon[id - 1];
+    let previousPokemon = allPokemon[id -2];
+    let nextPokemon = allPokemon[id];
     bluryBackground();
     renderStatsContainer(id);
     currentStats(currentPokemon);
+    setChangeImages(previousPokemon, nextPokemon);
     console.log(currentPokemon);
 }
 
-function bluryBackground(id) {
+function bluryBackground() {
     let statsBackground = document.getElementById('bluryBackground');
-    statsBackground.innerHTML = bluryBackgroundHTML(id);
+    statsBackground.innerHTML = bluryBackgroundHTML();
     document.getElementById('body').style.overflow = 'hidden';
 }
 
@@ -23,8 +26,7 @@ function bluryBackgroundHTML() {
 function renderStatsContainer(id) {
     let colorClass = allPokemon[id-1]['types']['0']['type']['name'].charAt(0).toUpperCase() + allPokemon[id-1]['types']['0']['type']['name'].slice(1);
     let statsContainer = document.getElementById('statsContainer');
-    statsContainer.innerHTML = statsContainerTopHTML();
-    statsContainer.innerHTML += statsContainerBottomHTML();
+    statsContainer.innerHTML = statsContainerHTML(id);
     document.getElementById('statsContainer').classList.remove('statsHidden');
     document.getElementById('statsTop').classList.add(colorClass+'Clicked')
 }
@@ -41,7 +43,6 @@ function currentStats(currentPokemon) {
     currentTypes(currentPokemon, name, id); 
     setBottomSection(image);
     // generateStats(currentPokemon);
-    // console.log(currentPokemon);
 }
 
 function currentTypes(currentPokemon, name, id) {
@@ -64,7 +65,6 @@ function setTopSection(name, id, typeOne, typeTwo) {
     document.getElementById('clickedId').innerHTML += id;
     document.getElementById('clickedTypeOne').innerHTML = typeOne;
     document.getElementById('clickedTypeTwo').innerHTML = typeTwo;
-    // document.getElementById('clickedTypeOne').classList.add = 
 }
 
 function setBottomSection(image) {
@@ -80,7 +80,6 @@ function clickedTypeIsVoid(typeTwo) {
 function currentAbilities(currentPokemon) {
     for (let i = 0; i < currentPokemon['abilities'].length; i++) {
         let ability = currentPokemon['abilities'][i]['ability']['name'];
-        // console.log(ability);
     }
 }
 
@@ -92,8 +91,9 @@ function currentAbilities(currentPokemon) {
 //     }
 // }
 
-function statsContainerTopHTML() {
+function statsContainerHTML(id) {
     return /*html*/ `
+    <div>
         <div id="statsTop" class="statsTop">
             <div class="nameIdArea">
                 <h2 id="clickedName"></h2>
@@ -104,29 +104,51 @@ function statsContainerTopHTML() {
                 <h4 id="clickedTypeTwo"></h4>
             </div>
         </div>
-     `;
-}
-
-function statsContainerBottomHTML() {
-    return /*html*/ `
         <div id="statsBottom" class="statsBottom">
             <div class="imageToCenter">
                 <img class=clickedImage id="clickedImage">
             </div>
-            <div class="navArea">
-                <p>About</p>
-                <p>Base Stats</p>
-                <p>Evolution</p>
-                <p>Moves</p>
+            <div class="changeStatsArea">
+                <img id="previousImage" class="smallPNG left" onclick="showStats(${id-1})">
+                <div class="navArea">
+                    <p>About</p>
+                    <p>Base Stats</p>
+                    <p>Evolution</p>
+                    <p>Moves</p>
+                </div>
+                <img id="nextImage" class="smallPNG right" onclick="showStats(${id+1})">
+            </div>
+            <div id="section">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                </table>
             </div>
         </div>
-     `;
+    </div>
+    `;
 }
 
 function showAll() {
     document.getElementById('statsBackground').classList.add('d-none');
     document.getElementById('body').style.overflow = '';
     document.getElementById('statsContainer').classList.add('statsHidden');
+}
+
+function setChangeImages(previousPokemon, nextPokemon) {
+    if (previousPokemon == undefined) {
+        document.getElementById('previousImage').classList.add('d-none');
+    } else {
+        let previousImage = previousPokemon['sprites']['other']['home']['front_default'];
+        document.getElementById('previousImage').src = previousImage; 
+    }
+    if (nextPokemon == undefined) {
+        document.getElementById('nextImage').classList.add('d-none');
+    } else {
+        let nextImage = nextPokemon['sprites']['other']['home']['front_default'];
+        document.getElementById('nextImage').src = nextImage; 
+    }
 }
 
 

@@ -31,7 +31,7 @@ let AUDIO_PIKA = new Audio('audio/pikaSound.mp3');
 
 function join() {
     AUDIO_PIKA.volume = .08;
-    // AUDIO_PIKA.play();
+    AUDIO_PIKA.play();
     let start = document.getElementById('start');
     start.style.opacity = '0';
     start.style.zIndex = '0';

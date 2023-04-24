@@ -1,3 +1,21 @@
+const CONFIG_BG_COLOR = [
+    'rgba(255, 99, 132, 0.2)',
+    'rgba(255, 0, 0, 0.2)',
+    'rgba(0, 72, 255, 0.2)',
+    'rgba(75, 192, 192, 0.2)',
+    'rgba(153, 102, 255, 0.2)',
+    'rgba(255, 255, 0, 0.2)'
+];
+
+const CONFIG_BORDER_COLOR = [
+    'rgba(255, 99, 132, 1)',
+    'rgba(255, 0, 0, 1)',
+    'rgba(0, 72, 255, 1)',
+    'rgba(75, 192, 192, 1)',
+    'rgba(153, 102, 255, 1)',
+    'rgba(255, 255, 0, 1)'
+];
+
 function showStats(id) {
     let currentPokemon = allPokemon[id - 1];
     let previousPokemon = allPokemon[id -2];
@@ -6,7 +24,6 @@ function showStats(id) {
     renderStatsContainer(id);
     currentStats(currentPokemon);
     setChangeImages(previousPokemon, nextPokemon);
-    console.log(currentPokemon);
 }
 
 function bluryBackground() {
@@ -31,18 +48,50 @@ function renderStatsContainer(id) {
     document.getElementById('statsTop').classList.add(colorClass+'Clicked')
 }
 
-{/* <canvas id="myChart" width="400" height="400"></canvas> */}
+
 
 function currentStats(currentPokemon) {
     let id = currentPokemon['id'];
-    // renderMoves(currentPokemon);
     let name = currentPokemon['name'].charAt(0).toUpperCase() + currentPokemon['name'].slice(1);
     let image = currentPokemon['sprites']['other']['dream_world']['front_default'];
     let height = (currentPokemon['height'] / 10).toFixed(2);
     let weight = (currentPokemon['weight'] / 10).toFixed(1);
-    currentTypes(currentPokemon, name, id); 
+    let heldItems = currentPokemon['held_items'];
+    let abilities = currentPokemon['abilities'];
+    currentTypes(currentPokemon, name, id);
+    controlItems(height, weight, heldItems, abilities);
     setBottomSection(image);
-    // generateStats(currentPokemon);
+}
+
+function controlItems(height, weight, heldItems, abilities) {
+    if (heldItems.length > 0) {
+        for (let i = 0; i < heldItems.length; i++) {
+            const heldItem = heldItems[i]['item']['name'];
+            if (i > 0) {
+                document.getElementById('heldItems').innerHTML += ',<br>';
+            }
+            document.getElementById('heldItems').innerHTML += heldItem;
+        }
+    } else {
+        document.getElementById('heldItems').innerHTML = '-/-';
+    }
+    controlAbilities(height, weight, abilities);
+}
+
+function controlAbilities(height, weight, abilities) {
+    for (let i = 0; i < abilities.length; i++) {
+        const ability = abilities[i]['ability']['name'];
+        if (i > 0) {
+            document.getElementById('abilities').innerHTML += ',<br>';
+        }
+        document.getElementById('abilities').innerHTML += ability;
+    }
+    setOthers(height, weight);
+}
+
+function setOthers(height, weight) {
+    document.getElementById('height').innerHTML = `${height} m`;
+    document.getElementById('weight').innerHTML = `${weight} kg`;
 }
 
 function currentTypes(currentPokemon, name, id) {
@@ -57,7 +106,6 @@ function currentTypes(currentPokemon, name, id) {
         setTopSection(name, id, typeOne, typeTwo);
     }
     clickedTypeIsVoid(typeTwo);
-    currentAbilities(currentPokemon);
 }
 
 function setTopSection(name, id, typeOne, typeTwo) {
@@ -76,20 +124,6 @@ function clickedTypeIsVoid(typeTwo) {
         document.getElementById('clickedTypeTwo').classList.add('d-none');
     }
 }
-
-function currentAbilities(currentPokemon) {
-    for (let i = 0; i < currentPokemon['abilities'].length; i++) {
-        let ability = currentPokemon['abilities'][i]['ability']['name'];
-    }
-}
-
-// function generateStats(currentPokemon) {
-//     let stats = currentPokemon['stats'];
-//     for (let i = 0; i < stats.length; i++) {
-//         let statName = stats[i]['stat']['name'];
-//         let statValue = stats[i]['base_stat'];
-//     }
-// }
 
 function statsContainerHTML(id) {
     return /*html*/ `
@@ -111,19 +145,34 @@ function statsContainerHTML(id) {
             <div class="changeStatsArea">
                 <img id="previousImage" class="smallPNG left" onclick="showStats(${id-1})">
                 <div class="navArea">
-                    <p>About</p>
-                    <p>Base Stats</p>
-                    <p>Evolution</p>
-                    <p>Moves</p>
+                    <p onclick="showStats(${id})">About</p>
+                    <p onclick="statsSection(${id})">Base Stats</p>
+                    <p onclick="movesSection(${id})">Moves</p>
                 </div>
                 <img id="nextImage" class="smallPNG right" onclick="showStats(${id+1})">
             </div>
             <div id="section">
                 <table>
                     <tr>
-                        <th></th>
+                        <th>Height:</th>
+                        <td id="height"></td>
+                    </tr>
+                    <tr>
+                        <th>Weight:</th>
+                        <td id="weight"></td>
+                    </tr>
+                    <tr>
+                        <th>Held Items:</th>
+                        <td id="heldItems"></td>
+                    </tr>
+                    <tr>
+                        <th>Abilities:</th>
+                        <td id="abilities"></td>
                     </tr>
                 </table>
+            </div>
+            <div class="closeButton">
+                <button class="btn btn-secondary" type="submit" onclick="showAll()">Close</button>
             </div>
         </div>
     </div>
@@ -151,62 +200,57 @@ function setChangeImages(previousPokemon, nextPokemon) {
     }
 }
 
+function statsSection(id) {
+    let hpValue = allPokemon[id - 1]['stats']['0']['base_stat'];
+    let hpName = allPokemon[id - 1]['stats']['0']['stat']['name'];
+    let attackValue = allPokemon[id - 1]['stats']['1']['base_stat'];
+    let attackName = allPokemon[id - 1]['stats']['1']['stat']['name'];
+    let defenseValue = allPokemon[id - 1]['stats']['2']['base_stat'];
+    let defenseName = allPokemon[id - 1]['stats']['2']['stat']['name'];
+    let spAttackValue = allPokemon[id - 1]['stats']['3']['base_stat'];
+    let spAttackName = allPokemon[id - 1]['stats']['3']['stat']['name'];
+    let spDefenseValue = allPokemon[id - 1]['stats']['4']['base_stat'];
+    let spDefenseName = allPokemon[id - 1]['stats']['4']['stat']['name'];
+    let speedValue = allPokemon[id - 1]['stats']['5']['base_stat'];
+    let speedName = allPokemon[id - 1]['stats']['5']['stat']['name'];
+    statsHTML(hpValue, hpName, attackValue, attackName, defenseValue, defenseName, spAttackValue, spAttackName, spDefenseValue, spDefenseName, speedValue, speedName);
+}
 
+function statsHTML(hpValue, hpName, attackValue, attackName, defenseValue, defenseName, spAttackValue, spAttackName, spDefenseValue, spDefenseName, speedValue, speedName) {
+    document.getElementById('section').innerHTML = '<canvas id="myChart" width="100%" height="100%"></canvas>';
+    document.getElementById('section').classList.remove('addedScrollbar');
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+    type: 'polarArea',
+    data: {
+        labels: [hpName, attackName, defenseName, spAttackName, spDefenseName, speedName],
+        datasets: [{
+            label: '',
+            data: [hpValue, attackValue, defenseValue, spAttackValue, spDefenseValue, speedValue],
+            backgroundColor: CONFIG_BG_COLOR,
+            borderColor: CONFIG_BORDER_COLOR,
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});    
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js";
-
-// const ctx = document.getElementById('myChart').getContext('2d');
-// const myChart = new Chart(ctx, {
-//     type: 'bar',
-//     data: {
-//         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-//         datasets: [{
-//             label: '# of Votes',
-//             data: [12, 19, 3, 5, 2, 3],
-//             backgroundColor: [
-//                 'rgba(255, 99, 132, 0.2)',
-//                 'rgba(54, 162, 235, 0.2)',
-//                 'rgba(255, 206, 86, 0.2)',
-//                 'rgba(75, 192, 192, 0.2)',
-//                 'rgba(153, 102, 255, 0.2)',
-//                 'rgba(255, 159, 64, 0.2)'
-//             ],
-//             borderColor: [
-//                 'rgba(255, 99, 132, 1)',
-//                 'rgba(54, 162, 235, 1)',
-//                 'rgba(255, 206, 86, 1)',
-//                 'rgba(75, 192, 192, 1)',
-//                 'rgba(153, 102, 255, 1)',
-//                 'rgba(255, 159, 64, 1)'
-//             ],
-//             borderWidth: 1
-//         }]
-//     },
-//     options: {
-//         scales: {
-//             y: {
-//                 beginAtZero: true
-//             }
-//         }
-//     }
-// });
+function movesSection(id) {
+    let allMoves = allPokemon[id - 1]['moves'];
+    document.getElementById('section').innerHTML = '';
+    document.getElementById('section').classList.add('addedScrollbar');
+    for (let i = 0; i < allMoves.length; i++) {
+        const move = (allMoves[i]['move']['name']).toUpperCase();
+        if (i > 0) {
+            document.getElementById('section').innerHTML += ',<br>';
+        }
+        document.getElementById('section').innerHTML += move;
+    }
+}

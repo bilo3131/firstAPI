@@ -285,3 +285,31 @@ footer {
     justify-content: space-between;
     position: relative;
 }
+
+#section {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.addedScrollbar {
+    overflow-y: scroll;
+}
+
+table {
+    height: 80%;
+    width: 80%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.closeButton {
+    display: none;
+    justify-content: center;
+    width: 100%;
+}
+
+.closeButton button {
+    width: 80%;
+}
